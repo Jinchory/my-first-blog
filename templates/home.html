@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="content_home">
+
+    <div id="homeimg">
+        <h4 style="margin: 0;">Jinchory의 Web Site 입니다.</h4>
+        <a href="/"><img src="{% static 'img/Jinchory character.jpg' %}" style="height:256px;"/></a>
+        
+    </div>
+
+    <hr style="margin: 5px 0;">
+
+    <h2>Select Application</h2>
+
+    <table id="applist">
+        <tr>
+        <td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a></i><b></td>
+        <td>북마크게시판입니다. </td>
+        <td class="Edit"><i><a href="#">Add</a></i></td>
+        <td class="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="{% url 'blog:index' %}">Blog</a></i><b></td>
+        <td>블로그게시판입니다.</td>
+        <td class="Edit"><i><a href="#">Add</a></i></td>
+        <td class="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+
+        <tr>
+        <td><b><i><a href="#">Photo</a></i><b></td>
+        <td>사진 게시판입니다. (미구현)</td>
+        <td class="Edit"><i><a href="#">Add</a></i></td>
+        <td class="Edit"><i><a href="#">Change</a></i></td>
+        </tr>
+    </table>
+    <hr>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; Jinchory , 2018
+</div>
+{% endblock footer %}
